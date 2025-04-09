@@ -5,7 +5,7 @@ export default function IngecodeSocialInterface() {
   const teamMembers = [
     {
       id: 1,
-      name: "Jesús Imanol Castillo Avendaño",
+      name: "Jesús Imanol Castillo Avendaña",
       role: "Desarrollador Full Stack",
       profileImage: "/api/placeholder/300/300",
       healthImage: "/api/placeholder/300/300",
@@ -25,13 +25,13 @@ export default function IngecodeSocialInterface() {
     },
     {
       id: 2,
-      name: "Hector Somer",
+      name: "Hector Somer Gay",
       role: "Back-end",
       profileImage: "/api/placeholder/300/300",
       healthImage: "/api/placeholder/300/300",
       likes: 98,
       comments: 27,
-      status: "En reunión"
+      status: "Cagando"
     }
   ];
 
