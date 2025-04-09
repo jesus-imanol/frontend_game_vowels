@@ -6,6 +6,7 @@ import GameLevelForm from './pages/GameLevelForm/GameLevel';
 import AnimalForm from './pages/animals/pages/CreateAnimalForm';
 import CompleteWordGame from './pages/Numbers/CompleteWordGame';
 import Home from './pages/Home/Home';
+import AnimalMemoryGame from './pages/AnimalMemorama/AnimalMemoryGame';
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/gamelevelform' element={<GameLevelForm />}></Route>
         <Route path='/createAnimalForm' element={<AnimalForm />}></Route>
         <Route path='/completarPalabra' element={<CompleteWordGame />}></Route>
+        <Route path='/memoramaGame' element={<AnimalMemoryGame />}></Route>
       </Routes>
      </BrowserRouter>
   )
