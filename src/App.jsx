@@ -8,6 +8,7 @@ import CompleteWordGame from './pages/Numbers/CompleteWordGame';
 import Home from './pages/Home/Home';
 import AnimalMemoryGame from './pages/AnimalMemorama/AnimalMemoryGame';
 import IngecodeSocialInterface from './pages/AboutUs/AboutUs';
+import Login from './pages/Login/Login';
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/completarPalabra' element={<CompleteWordGame />}></Route>
         <Route path='/memoramaGame' element={<AnimalMemoryGame />}></Route>
         <Route path='/aboutus' element={<IngecodeSocialInterface />}></Route>
+        <Route path='/login' element={<Login />}></Route>
       </Routes>
      </BrowserRouter>
   )

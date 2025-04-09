@@ -1,14 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Code, MessageCircle, ThumbsUp, Share2, Users, Bell, Laptop, Database, Server } from 'lucide-react';
-
+import logo from '/logo.png';
+import { useNavigate } from 'react-router-dom';
+import chuy from '/chuy.png';
+import david from '/davity.png';
+import somer from '/somer.png';
+import chuyHover from '/chuyHover.png';
+import davityHover from '/davityHover.png';
+import somerHover from '/somerHover.png';
 export default function IngecodeSocialInterface() {
   const teamMembers = [
     {
       id: 1,
       name: "Jesús Imanol Castillo Avendaña",
       role: "Desarrollador Full Stack",
-      profileImage: "/api/placeholder/300/300",
-      healthImage: "/api/placeholder/300/300",
+      profileImage:chuy,
+      healthImage: chuyHover,
       likes: 128,
       comments: 32,
       status: "Disponible"
@@ -17,8 +24,8 @@ export default function IngecodeSocialInterface() {
       id: 3,
       name: "David Reynold Guzman Castro",
       role: "Ingeniero de Software",
-      profileImage: "/api/placeholder/300/300",
-      healthImage: "/api/placeholder/300/300",
+      profileImage: david,
+      healthImage: davityHover,
       likes: 156,
       comments: 45,
       status: "Trabajando"
@@ -27,8 +34,8 @@ export default function IngecodeSocialInterface() {
       id: 2,
       name: "Hector Somer Gay",
       role: "Back-end",
-      profileImage: "/api/placeholder/300/300",
-      healthImage: "/api/placeholder/300/300",
+      profileImage: somer,
+      healthImage: somerHover,
       likes: 98,
       comments: 27,
       status: "Cagando"
@@ -39,6 +46,7 @@ export default function IngecodeSocialInterface() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showPulse, setShowPulse] = useState({});
 
+  const navigate = useNavigate();
   useEffect(() => {
     // Iniciar animación de pulso para cada miembro secuencialmente
     teamMembers.forEach((member, index) => {
@@ -139,6 +147,9 @@ export default function IngecodeSocialInterface() {
                 <Code className="w-6 h-6 text-purple-700" />
               </div>
               <h1 className="text-2xl font-bold">ingecode</h1>
+              <div className='flex justify-center items-center'>
+              <img src={logo} className='w-32 h-16 cursor-pointer' alt="" onClick={()=>navigate("/")}/>
+              </div>
             </div>
             <div className="hidden md:flex items-center">
               <button className="relative px-4 py-2 rounded-full hover:bg-white/10 transition-colors duration-200">

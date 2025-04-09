@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-
+import logo from '/logo.png';
+import { useNavigate } from 'react-router-dom';
 export default function GameLevelForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -7,6 +8,7 @@ export default function GameLevelForm() {
     difficulty: '',
     animal_ids: []
   });
+  const navigate = useNavigate();
   
   const [animals, setAnimals] = useState([]);
   const [levels, setLevels] = useState([]);
@@ -102,8 +104,14 @@ export default function GameLevelForm() {
 
   return (
     <div className="mx-auto max-w-4xl p-6">
-      <h1 className="text-2xl font-bold mb-6">Gestión de Niveles</h1>
-      
+      <div className='flex items-center justify-start ml-7 gap-8'>
+          <div className='flex flex-col items-start'>
+          <h1 className="text-2xl font-bold ">Gestión de Niveles</h1>
+          <h1 className="text-1xl font-normal mt-2 cursor-pointer hover:text-blue-600"
+          onClick={()=>navigate("/createAnimalForm")}>Agregar Nuevo animal</h1>
+          </div>
+      <img src={logo} alt="" className='w-32 h-16 cursor-pointer' onClick={()=>navigate("/")}/>
+      </div>
       {/* Formulario para crear niveles */}
       <div className="bg-white shadow-md rounded-lg p-6 mb-8">
         <h2 className="text-xl font-semibold mb-4">Crear Nuevo Nivel</h2>

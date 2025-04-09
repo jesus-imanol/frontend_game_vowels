@@ -211,7 +211,7 @@ export default function AnimalMemoryGame() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 p-4">
       <header className="text-center mb-6">
-        <img src={logo} alt="Logo" className="w-32 mx-auto mb-4"
+        <img src={logo} alt="Logo" className="w-32 mx-auto mb-4 cursor-pointer"
         onClick={() => navigate('/')}
          />
         <h1 className="text-3xl font-bold text-purple-800 mb-2">

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import logo from '/logo.png';
 export default function AnimalForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -7,6 +8,7 @@ export default function AnimalForm() {
     image: null
   });
   
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -79,7 +81,18 @@ export default function AnimalForm() {
 
   return (
     <div className="mx-auto max-w-2xl p-6 bg-white shadow-md rounded-lg">
-      <h1 className="text-2xl font-bold mb-6">Agregar Nuevo Animal</h1>
+      <div className='flex'>
+        <div className='flex flex-col'>
+          <h1 className="text-2xl font-bold">Agregar Nuevo Animal</h1>
+          <h1 className="text-1xl font-normal mt-2 cursor-pointer hover:text-blue-600"
+          onClick={()=>navigate("/gamelevelform")}>Agregar Nuevo nivel</h1>
+        </div>
+      <img
+        src={logo}
+        alt="Logo"
+        className="w-32 h-16 mb-4 cursor-pointer"
+        onClick={() => navigate("/")}></img>
+      </div>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Campo Nombre */}

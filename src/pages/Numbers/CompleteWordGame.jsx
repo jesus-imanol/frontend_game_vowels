@@ -344,18 +344,29 @@ export default function CompleteWordGame() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-100 to-blue-50" style={{ backgroundColor: '#D7E5FA' }}>
-      <header className="p-6 text-center bg-gradient-to-r from-purple-700 to-purple-800 flex" style={{ backgroundColor: '#9333EA' }}>
-        <img src={logo} alt="Logo" className="w-24 h-24 mx-auto mb-4" 
-        onClick={() => navigate('/')}/>
-        <div>
-        <h1 className="text-3xl font-bold text-white mb-2">
-          Completa la Palabra
-        </h1>
-        <p className="text-purple-100 max-w-lg mx-auto">
-          Observa la imagen y completa el nombre del animal con las letras correctas.
-        </p>
-        </div>
-      </header>
+      <header
+  className="p-6 bg-gradient-to-r from-purple-700 to-purple-800 flex items-center justify-center"
+  style={{ backgroundColor: '#9333EA' }}
+>
+  {/* Logo */}
+  <img
+    src={logo}
+    alt="Logo"
+    className="w-36 h-24 mr-4 cursor-pointer"
+    onClick={() => navigate('/')}
+  />
+
+  {/* Texto */}
+  <div>
+    <h1 className="text-3xl font-bold text-white mb-2">
+      Completa la Palabra
+    </h1>
+    <p className="text-purple-100 max-w-lg">
+      Observa la imagen y completa el nombre del animal con las letras correctas.
+    </p>
+  </div>
+</header>
+
       
       {/* Difficulty selection */}
       <div className="mb-6 text-center p-4">

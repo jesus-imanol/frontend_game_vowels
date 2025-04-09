@@ -39,9 +39,10 @@ export default function Home() {
           </div>
           
           <nav className="flex space-x-4">
-            <a href="#" className="px-3 py-2 rounded-lg hover:bg-purple-600 transition-colors duration-200">Inicio</a>
-            <a href="#" className="px-3 py-2 rounded-lg hover:bg-purple-600 transition-colors duration-200">Sobre Nosotros</a>
-            <a href="#" className="px-3 py-2 rounded-lg hover:bg-purple-600 transition-colors duration-200">Contacto</a>
+            <p href="#" className="px-3 py-2 rounded-lg hover:bg-purple-600 transition-colors duration-200"
+            onClick={()=>navigate("/aboutus")}>Sobre Nosotros</p>
+            <p href="#" className="px-3 py-2 rounded-lg hover:bg-purple-600 transition-colors duration-200"
+            onClick={()=> navigate("/login")}>Login</p>
           </nav>
         </div>
       </header>
