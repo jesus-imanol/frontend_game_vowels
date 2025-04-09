@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-
+import logo from '/logo.png'
+import { useNavigate } from 'react-router';
 export default function AnimalVowelGame() {
   const [levels, setLevels] = useState([]);
   const [currentLevel, setCurrentLevel] = useState(null);
@@ -15,6 +16,7 @@ export default function AnimalVowelGame() {
   const [feedback, setFeedback] = useState({ show: false, message: '', type: '' });
   const [showLevelComplete, setShowLevelComplete] = useState(false);
 
+  const navigate = useNavigate();
   // Fetch all levels
   useEffect(() => {
     const fetchLevels = async () => {
@@ -192,6 +194,8 @@ export default function AnimalVowelGame() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 p-4">
       <header className="text-center mb-6">
+        <img src={logo} alt="Logo" className="w-32 h-24 mx-auto mb-4"
+        onClick={() => navigate('/')}/>
         <h1 className="text-3xl font-bold text-purple-800 mb-2">
           Aprende Vocales con Animales
         </h1>

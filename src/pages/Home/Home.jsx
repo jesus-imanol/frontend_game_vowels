@@ -88,126 +88,185 @@ export default function Home() {
           
           {/* Sección de Juegos */}
           <section>
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-purple-800 mb-2">Nuestros Juegos</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Explora nuestra colección de juegos educativos diseñados para 
-                aprender mientras te diviertes.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Juego de Completar Palabra */}
-              <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div className="h-48 bg-purple-100 flex items-center justify-center p-4">
-                  <svg
-                    className="w-32 h-32"
-                    viewBox="0 0 120 120"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect x="10" y="30" width="100" height="60" rx="4" fill="#9333EA" />
-                    <rect x="20" y="40" width="15" height="15" rx="2" fill="#D7E5FA" />
-                    <rect x="40" y="40" width="15" height="15" rx="2" fill="#D7E5FA" />
-                    <rect x="60" y="40" width="15" height="15" rx="2" fill="white" stroke="#D7E5FA" strokeWidth="2" strokeDasharray="3 3" />
-                    <rect x="80" y="40" width="15" height="15" rx="2" fill="#D7E5FA" />
-                    <rect x="20" y="65" width="15" height="15" rx="2" fill="#D7E5FA" />
-                    <rect x="40" y="65" width="15" height="15" rx="2" fill="white" stroke="#D7E5FA" strokeWidth="2" strokeDasharray="3 3" />
-                    <rect x="60" y="65" width="15" height="15" rx="2" fill="#D7E5FA" />
-                    <rect x="80" y="65" width="15" height="15" rx="2" fill="white" stroke="#D7E5FA" strokeWidth="2" strokeDasharray="3 3" />
-                    <circle cx="95" cy="25" r="15" fill="#D7E5FA" stroke="#9333EA" strokeWidth="2" />
-                    <path d="M90 25H100" stroke="#9333EA" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M95 20V30" stroke="#9333EA" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-purple-800 mb-2">Completa la Palabra</h3>
-                  <p className="text-gray-600 mb-4">
-                    Observa las imágenes de animales y completa sus nombres 
-                    adivinando las letras que faltan.
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="flex items-center text-yellow-500">
-                      <Award className="h-5 w-5 mr-1" />
-                      <span className="font-medium">+100 puntos</span>
-                    </span>
-                    <p
-                      onClick={() => navigate('/completarPalabra')}
-                      className="cursor-pointer px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-colors duration-200 flex items-center"
-                    >
-                      Jugar Ahora
-                      <svg className="ml-2 w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Tarjetas para juegos futuros (inactivas) */}
-              <div className="bg-white rounded-xl shadow-md overflow-hidden opacity-60">
-                <div className="h-48 bg-purple-100 flex items-center justify-center p-4">
-                  <svg
-                    className="w-32 h-32 text-purple-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-400 mb-2">Busca Palabras</h3>
-                  <p className="text-gray-400 mb-4">
-                    Encuentra nombres de animales ocultos en una cuadrícula de letras.
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="flex items-center text-gray-400">
-                      <Award className="h-5 w-5 mr-1" />
-                      <span className="font-medium">Próximamente</span>
-                    </span>
-                    <button
-                      disabled
-                      className="px-4 py-2 bg-gray-300 text-white rounded-lg cursor-not-allowed"
-                    >
-                      Próximamente
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-xl shadow-md overflow-hidden opacity-60">
-                <div className="h-48 bg-purple-100 flex items-center justify-center p-4">
-                  <svg
-                    className="w-32 h-32 text-purple-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-400 mb-2">Quiz Ecológico</h3>
-                  <p className="text-gray-400 mb-4">
-                    Pon a prueba tus conocimientos sobre ecología y medio ambiente.
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="flex items-center text-gray-400">
-                      <Award className="h-5 w-5 mr-1" />
-                      <span className="font-medium">Próximamente</span>
-                    </span>
-                    <button
-                      disabled
-                      className="px-4 py-2 bg-gray-300 text-white rounded-lg cursor-not-allowed"
-                    >
-                      Próximamente
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+  <div className="text-center mb-8">
+    <h2 className="text-3xl font-bold text-purple-800 mb-2">Nuestros Juegos</h2>
+    <p className="text-gray-600 max-w-2xl mx-auto">
+      Explora nuestra colección de juegos educativos diseñados para 
+      aprender mientras te diviertes.
+    </p>
+  </div>
+  
+  <div className="grid md:grid-cols-3 gap-6">
+    {/* Juego de Completar Palabra */}
+    <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+      <div className="h-48 bg-purple-100 flex items-center justify-center p-4">
+        <svg
+          className="w-32 h-32"
+          viewBox="0 0 120 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect x="10" y="30" width="100" height="60" rx="4" fill="#9333EA" />
+          <rect x="20" y="40" width="15" height="15" rx="2" fill="#D7E5FA" />
+          <rect x="40" y="40" width="15" height="15" rx="2" fill="#D7E5FA" />
+          <rect x="60" y="40" width="15" height="15" rx="2" fill="white" stroke="#D7E5FA" strokeWidth="2" strokeDasharray="3 3" />
+          <rect x="80" y="40" width="15" height="15" rx="2" fill="#D7E5FA" />
+          <rect x="20" y="65" width="15" height="15" rx="2" fill="#D7E5FA" />
+          <rect x="40" y="65" width="15" height="15" rx="2" fill="white" stroke="#D7E5FA" strokeWidth="2" strokeDasharray="3 3" />
+          <rect x="60" y="65" width="15" height="15" rx="2" fill="#D7E5FA" />
+          <rect x="80" y="65" width="15" height="15" rx="2" fill="white" stroke="#D7E5FA" strokeWidth="2" strokeDasharray="3 3" />
+          <circle cx="95" cy="25" r="15" fill="#D7E5FA" stroke="#9333EA" strokeWidth="2" />
+          <path d="M90 25H100" stroke="#9333EA" strokeWidth="2" strokeLinecap="round" />
+          <path d="M95 20V30" stroke="#9333EA" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-purple-800 mb-2">Completa la Palabra</h3>
+        <p className="text-gray-600 mb-4">
+          Observa las imágenes de animales y completa sus nombres 
+          adivinando las letras que faltan.
+        </p>
+        <div className="flex justify-between items-center">
+          <span className="flex items-center text-yellow-500">
+            <Award className="h-5 w-5 mr-1" />
+            <span className="font-medium">+100 puntos</span>
+          </span>
+          <p
+            onClick={() => navigate('/completarPalabra')}
+            className="cursor-pointer px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-colors duration-200 flex items-center"
+          >
+            Jugar Ahora
+            <svg className="ml-2 w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Juego de Aprende Vocales con Animales - Habilitado */}
+    <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+      <div className="h-48 bg-purple-100 flex items-center justify-center p-4">
+        <svg
+          className="w-32 h-32"
+          viewBox="0 0 120 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Base circular de fondo */}
+          <circle cx="60" cy="60" r="50" fill="#D7E5FA" stroke="#9333EA" strokeWidth="2" />
+          
+          {/* Letra A */}
+          <path d="M38 40L48 70H28L38 40Z" fill="#9333EA" />
+          <path d="M33 60H43" stroke="white" strokeWidth="2" strokeLinecap="round" />
+          
+          {/* Letra E */}
+          <path d="M58 40H78V45H63V50H73V55H63V65H78V70H58V40Z" fill="#9333EA" />
+          
+          {/* Cara de animal (oso) */}
+          <circle cx="60" cy="85" r="10" fill="#9333EA" />
+          <circle cx="55" cy="82" r="2" fill="white" />
+          <circle cx="65" cy="82" r="2" fill="white" />
+          <path d="M56 88C58 90 62 90 64 88" stroke="white" strokeLinecap="round" strokeWidth="1.5" />
+          <circle cx="48" cy="78" r="5" fill="#9333EA" />
+          <circle cx="72" cy="78" r="5" fill="#9333EA" />
+        </svg>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-purple-800 mb-2">Aprende Vocales con Animales</h3>
+        <p className="text-gray-600 mb-4">
+          Descubre animales que empiezan con cada vocal y aprende a identificarlas de forma divertida.
+        </p>
+        <div className="flex justify-between items-center">
+          <span className="flex items-center text-yellow-500">
+            <Award className="h-5 w-5 mr-1" />
+            <span className="font-medium">+150 puntos</span>
+          </span>
+          <p
+            onClick={() => navigate('/relacionarAnimal')}
+            className="cursor-pointer px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-colors duration-200 flex items-center"
+          >
+            Jugar Ahora
+            <svg className="ml-2 w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Juego de Memorama de Animales - Habilitado */}
+    <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+      <div className="h-48 bg-purple-100 flex items-center justify-center p-4">
+        <svg
+          className="w-32 h-32"
+          viewBox="0 0 120 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Tarjetas de memoria */}
+          <rect x="15" y="25" width="25" height="35" rx="3" fill="#9333EA" />
+          <rect x="48" y="25" width="25" height="35" rx="3" fill="#9333EA" />
+          <rect x="80" y="25" width="25" height="35" rx="3" fill="white" stroke="#9333EA" strokeWidth="2" />
+          
+          <rect x="15" y="68" width="25" height="35" rx="3" fill="white" stroke="#9333EA" strokeWidth="2" />
+          <rect x="48" y="68" width="25" height="35" rx="3" fill="#9333EA" />
+          <rect x="80" y="68" width="25" height="35" rx="3" fill="#9333EA" />
+          
+          {/* Dibujos de animales en tarjetas abiertas */}
+          {/* Gato en tarjeta 1 */}
+          <circle cx="27.5" cy="37" r="8" fill="white" />
+          <circle cx="24" cy="34" r="1.5" fill="#9333EA" />
+          <circle cx="31" cy="34" r="1.5" fill="#9333EA" />
+          <path d="M25 40C26 41 29 41 30 40" stroke="#9333EA" strokeLinecap="round" />
+          <path d="M21 33L24 30" stroke="white" strokeLinecap="round" />
+          <path d="M34 33L31 30" stroke="white" strokeLinecap="round" />
+          
+          {/* Perro en tarjeta 2 */}
+          <circle cx="60.5" cy="37" r="8" fill="white" />
+          <circle cx="57" cy="34" r="1.5" fill="#9333EA" />
+          <circle cx="64" cy="34" r="1.5" fill="#9333EA" />
+          <path d="M58 41C59 42 62 42 63 41" stroke="#9333EA" strokeLinecap="round" />
+          <rect x="56.5" cy="30" width="8" height="4" rx="2" fill="white" />
+          
+          {/* Gato en tarjeta 5 (coincide con tarjeta 1) */}
+          <circle cx="60.5" cy="80" r="8" fill="white" />
+          <circle cx="57" cy="77" r="1.5" fill="#9333EA" />
+          <circle cx="64" cy="77" r="1.5" fill="#9333EA" />
+          <path d="M58 83C59 84 62 84 63 83" stroke="#9333EA" strokeLinecap="round" />
+          <path d="M54 76L57 73" stroke="white" strokeLinecap="round" />
+          <path d="M67 76L64 73" stroke="white" strokeLinecap="round" />
+          
+          {/* Símbolo de interrogación en tarjetas cerradas */}
+          <text x="92.5" y="47" fontSize="20" fill="#9333EA" textAnchor="middle">?</text>
+          <text x="27.5" y="90" fontSize="20" fill="#9333EA" textAnchor="middle">?</text>
+          <text x="92.5" y="90" fontSize="20" fill="#9333EA" textAnchor="middle">?</text>
+        </svg>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-purple-800 mb-2">Memorama de Animales</h3>
+        <p className="text-gray-600 mb-4">
+          Ejercita tu memoria encontrando pares de animales iguales en este divertido juego de cartas.
+        </p>
+        <div className="flex justify-between items-center">
+          <span className="flex items-center text-yellow-500">
+            <Award className="h-5 w-5 mr-1" />
+            <span className="font-medium">+120 puntos</span>
+          </span>
+          <p
+            onClick={() => navigate('/memoramaGame')}
+            className="cursor-pointer px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-colors duration-200 flex items-center"
+          >
+            Jugar Ahora
+            <svg className="ml-2 w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
           
           {/* Sección Beneficios */}
           <section className="mt-16">
